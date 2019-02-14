@@ -167,6 +167,16 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
+.pause {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  left: calc(50% - 92px/2 - 93.5px);
+  top: calc(50% - 92px/2 + 245px);
+  fill: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
 .reset {
   position: absolute;
   width: 92px;
