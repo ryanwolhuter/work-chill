@@ -1,33 +1,186 @@
+/* iPhone X */
+
 .App {
-  text-align: center;
+  position: relative;
+width: 375px;
+height: 812px;
+
+background: #BEBEBE;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-  pointer-events: none;
+.header-wrapper {
+  position: absolute;
+  width: 375px;
+  height: 127px;
+  left: 0px;
+  top: -5px;
+
+  background: #FFFFFF;
+  border-radius: 4px;
+  box-shadow: 0 -2px -2px rgba(0, 0, 0, 0.05);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+  position: absolute;
+  width: 260px;
+  height: 56px;
+  left: calc(50% - 260px/2 - 0.5px);
+  top: calc(50% - 56px/2 - 325px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 48px;
+  letter-spacing: 0.01em;
+
+  color: #737373;
 }
 
-.App-link {
-  color: #61dafb;
+.circle {
+  position: absolute;
+  width: 332px;
+  height: 332px;
+  left: 21px;
+  top: 240px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.indicator {
+  position: absolute;
+  width: 60px;
+  height: 26px;
+  left: 157px;
+  top: 325px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  line-height: normal;
+  font-size: 24px;
+  letter-spacing: 0.01em;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.timer {
+  position: absolute;
+  width: 163px;
+  height: 58px;
+  left: 106px;
+  top: 377px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 64px;
+  letter-spacing: 0.01em;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.work-time {
+  position: absolute;
+  width: 117px;
+  height: 25px;
+  left: calc(50% - 117px/2 - 93px);
+  top: calc(50% - 25px/2 - 251.5px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.chill-time {
+  position: absolute;
+  width: 97px;
+  height: 25px;
+  left: calc(50% - 97px/2 + 94px);
+  top: calc(50% - 25px/2 - 251.5px);
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 22px;
+  letter-spacing: 0.01em;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.work-down-arrow {
+  position: absolute;
+  left: 15.2%;
+  right: 77.87%;
+  top: 21.92%;
+  bottom: 75%;
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.work-up-arrow {
+  position: absolute;
+  left: 27.73%;
+  right: 65.33%;
+  top: 21.92%;
+  bottom: 71.92%;
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.chill-down-arrow {
+  position: absolute;
+  left: 65.33%;
+  right: 27.73%;
+  top: 21.92%;
+  bottom: 75%;
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.chill-up-arrow {
+  position: absolute;
+  left: 77.87%;
+  right: 15.2%;
+  top: 21.92%;
+  bottom: 71.92%;
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.play {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  left: calc(50% - 92px/2 - 93.5px);
+  top: calc(50% - 92px/2 + 245px);
+  fill: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.reset {
+  position: absolute;
+  width: 92px;
+  height: 92px;
+  left: calc(50% - 92px/2 + 93.5px);
+  top: calc(50% - 92px/2 + 245px);
+  fill: white;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }

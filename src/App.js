@@ -1,25 +1,112 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { ReactComponent as UpArrow } from './up-arrow.svg'
+import { ReactComponent as DownArrow } from './down-arrow.svg'
+import { ReactComponent as PlayButton } from './play.svg'
+import { ReactComponent as PauseButton} from './pause.svg'
+import { ReactComponent as ResetButton } from './reset.svg'
+
+const Header = () => (
+  <>
+    <div className='header-wrapper'/>
+    <header className='header'>Work | Chill</header>
+  </>
+)
+
+const WorkTime = () => {
+  return (
+    <div className='work-time'>
+      Work for <strong>25</strong>
+    </div>
+  )
+}
+
+const WorkArrows = () => {
+  return (
+    <>
+      <UpArrow className='work-up-arrow' />
+      <DownArrow className='work-down-arrow' />
+    </>
+  )
+}
+
+const ChillTime = () => {
+  return (
+    <>
+      <div className='chill-time'>
+        Chill for <strong>5</strong>
+        </div>
+    </>
+  )
+}
+
+const ChillArrows = () => {
+  return (
+    <>
+      <UpArrow className='chill-up-arrow'/>
+      <DownArrow className='chill-down-arrow'/>
+    </>
+  )
+}
+
+const Circle = () => {
+  return (
+    <svg className='circle' width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="170" cy="170" r="166" stroke="white" strokeWidth="8" />
+    </svg>
+  )
+}
+
+const Indicator = () => {
+  return (
+    <div className='indicator'>Work</div>
+  )
+}
+
+const Timer = () => {
+  return (
+    <div className='timer'>25:00</div>
+  )
+}
+
+const Play = () => {
+  return (
+    <PlayButton className='play'/>
+  )
+}
+
+const Reset = () => {
+  return (
+    <ResetButton className='reset'/>
+
+  )
+}
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+
+        <Header/>
+
+        <WorkTime />
+
+        <WorkArrows/>
+
+        <ChillTime/>
+
+        <ChillArrows/>
+
+        <Circle />
+
+        <Indicator/>
+
+        <Timer />
+
+        <Play />
+
+        <Reset />
+        
       </div>
     );
   }
