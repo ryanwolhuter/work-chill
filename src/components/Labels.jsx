@@ -64,11 +64,31 @@ const Labels = ({ chillTime, workTime, updateChillTime, updateWorkTime }) => {
     <>
       <WorkTime workTime={workTime}/>
 
-      <WorkArrows updateWorkTime={updateWorkTime}/>
+      <UpArrow
+        className='work-up-arrow'
+        id='work-up-arrow'
+        onClick={updateWorkTime}
+      />
+
+      <DownArrow
+        className='work-down-arrow'
+        id='work-down-arrow'
+        onClick={updateWorkTime}
+      />
 
       <ChillTime chillTime={chillTime}/>
 
-      <ChillArrows updateChillTime={updateChillTime}/>
+      <UpArrow
+        className='chill-up-arrow'
+        id='chill-up-arrow'
+        onClick={updateChillTime}
+      />
+
+      <DownArrow
+        className='chill-down-arrow'
+        id='chill-down-arrow'
+        onClick={updateChillTime}
+      />
     </>
   )
 }

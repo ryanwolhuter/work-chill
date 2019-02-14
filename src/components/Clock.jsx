@@ -141,6 +141,7 @@ class Clock extends Component {
   }
 
   updateWorkTime = event => {
+
     const {
       workTime,
       workOffset,
@@ -148,20 +149,27 @@ class Clock extends Component {
       clock
     } = this.state
 
-    event.currentTarget.id === 'work-up-arrow'
-      ? workTime < 60 && this.setState({
+    if (event.currentTarget.id === 'work-up-arrow' && workTime < 60) {
+
+      this.setState({
         workTime: workTime + 1,
         workOffset: remainingTime ? workOffset + 1 : workOffset,
         clock: { minutes: clock.minutes += 1, seconds: clock.seconds }
       })
-      : workTime > 1 && this.setState({
+    }
+
+    else if (event.currentTarget.id === 'work-down-arrow' && workTime > 1) {
+
+      this.setState({
         workTime: workTime - 1,
         workOffset: remainingTime ? workOffset - 1 : workOffset,
         clock: { minutes: clock.minutes -= 1, seconds: clock.seconds }
       })
+    }
   }
 
   updateChillTime = event => {
+
     const {
       chillTime,
       chillOffset,
@@ -170,21 +178,26 @@ class Clock extends Component {
       clock
     } = this.state
 
-    event.currentTarget.id === 'chill-up-arrow'
-      ? chillTime < 60 && this.setState({
+    if (event.currentTarget.id === 'chill-up-arrow' && chillTime < 60) {
+      this.setState({
         chillTime: chillTime + 1,
         chillOffset: remainingTime ? chillOffset + 1 : chillOffset,
         clock: chilling
           ? { minutes: clock.minutes += 1, seconds: clock.seconds }
           : clock
       })
-      : chillTime > 1 && this.setState({
+    }
+
+    else if (event.currentTarget.id === 'chill-down-arrow' && chillTime > 1) {
+
+      this.setState({
         chillTime: chillTime - 1,
         chillOffset: remainingTime ? chillOffset - 1 : chillOffset,
         clock: chilling
           ? { minutes: clock.minutes -= 1, seconds: clock.seconds }
           : clock
       })
+    }
   }
 
   handleReset = () => {
