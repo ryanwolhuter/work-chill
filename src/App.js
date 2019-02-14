@@ -51,8 +51,16 @@ const ChillArrows = () => {
 
 const Circle = () => {
   return (
-    <svg className='circle' width="340" height="340" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="170" cy="170" r="166" stroke="white" strokeWidth="8" />
+    <svg className='circle' viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="170" cy="170" r="166" />
+    </svg>
+  )
+}
+
+const AnimatedCircle = () => {
+  return (
+    <svg className='spinner' viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle className='animated-circle' cx="170" cy="170" r="166" stroke="white" strokeWidth="8" />
     </svg>
   )
 }
@@ -97,7 +105,7 @@ class App extends Component {
 
         <ChillArrows/>
 
-        <Circle />
+        <AnimatedCircle />
 
         <Indicator/>
 
@@ -106,7 +114,7 @@ class App extends Component {
         <Play />
 
         <Reset />
-        
+
       </div>
     );
   }

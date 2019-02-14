@@ -2,10 +2,10 @@
 
 .App {
   position: relative;
-width: 375px;
-height: 812px;
+  width: 375px;
+  height: 812px;
 
-background: #BEBEBE;
+  background: #BEBEBE;
 }
 
 .header-wrapper {
@@ -35,14 +35,6 @@ background: #BEBEBE;
   letter-spacing: 0.01em;
 
   color: #737373;
-}
-
-.circle {
-  position: absolute;
-  width: 332px;
-  height: 332px;
-  left: 21px;
-  top: 240px;
 }
 
 .indicator {
@@ -183,4 +175,50 @@ background: #BEBEBE;
   top: calc(50% - 92px/2 + 245px);
   fill: white;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.circle {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: 21px;
+  top: 240px;
+  stroke: white;
+  stroke-width: 8;
+}
+
+.spinner {
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  left: 21px;
+  top: 240px;
+}
+
+.animated-circle {
+  position: absolute;
+  left: 21px;
+  top: 240px;
+  stroke: white;
+  stroke-width: 8;
+  stroke-dasharray: 1068;
+  stroke-linecap: round;
+  transform-origin: 170px 170px 0;
+  animation: spinner 9s linear infinite;
+  animation-direction: normal;
+}
+
+@keyframes spinner {
+  0% {
+    stroke-dashoffset: 34;
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: 1068;
+    transform: rotate(720deg);
+  }
+  100% {
+    stroke-dashoffset: 34;
+    transform: rotate(1080deg)
+  }
 }
