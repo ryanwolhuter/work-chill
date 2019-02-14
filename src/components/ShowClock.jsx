@@ -31,22 +31,6 @@ const Timer = ({ clock }) => {
   )
 }
 
-const Play = () => {
-  return (
-    <PlayButton
-      className='play'
-    />
-  )
-}
-
-const Pause = () => {
-  return (
-    <PauseButton
-      className='pause'
-    />
-  )
-}
-
 const Reset = ({ handleReset }) => {
   return (
     <ResetButton

@@ -14,24 +14,6 @@ const WorkTime = ({ workTime }) => {
   )
 }
 
-const WorkArrows = ({ updateChillTime }) => {
-  return (
-    <>
-      <UpArrow
-        className='work-up-arrow'
-        id='chill-down-arrow'
-        onClick={updateChillTime}
-      />
-
-      <DownArrow
-        className='work-down-arrow'
-        id='chill-up-arrow'
-        onClick={updateChillTime}
-      />
-    </>
-  )
-}
-
 const ChillTime = ({ chillTime }) => {
   return (
     <div className='chill-time'>
@@ -40,23 +22,6 @@ const ChillTime = ({ chillTime }) => {
   )
 }
 
-const ChillArrows = ({ updateWorkTime }) => {
-  return (
-    <>
-      <UpArrow
-        className='chill-up-arrow'
-        id='chill-up-arrow'
-        onClick={updateWorkTime}
-      />
-
-      <DownArrow
-        className='chill-down-arrow'
-        id='chill-down-arrow'
-        onClick={updateWorkTime}
-      />
-    </>
-  )
-}
 
 const Labels = ({ chillTime, workTime, updateChillTime, updateWorkTime }) => {
 
