@@ -6,7 +6,12 @@ import { ReactComponent as ResetButton } from '../assets/reset.svg'
 
 const Circle = () => {
   return (
-    <svg className='circle' viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg
+      className='circle'
+      viewBox="0 0 340 340"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
       <circle cx="170" cy="170" r="166" />
     </svg>
   )
@@ -14,15 +19,28 @@ const Circle = () => {
 
 const AnimatedCircle = () => {
   return (
-    <svg className='spinner' viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle id='animated-circle' className='animated-circle' cx="170" cy="170" r="166" stroke="white" strokeWidth="8" />
+    <svg
+      className='spinner'
+      viewBox="0 0 340 340"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <circle
+        id='animated-circle'
+        className='animated-circle'
+        cx="170" cy="170" r="166"
+        stroke="white"
+        strokeWidth="8"
+      />
     </svg>
   )
 }
 
 const Indicator = ({ chilling }) => {
   return (
-    <div className='indicator'>{chilling ? 'Chill' : 'Work'}</div>
+    <div className='indicator'>
+      {chilling ? 'Chill' : 'Work'}
+    </div>
   )
 }
 
@@ -32,13 +50,17 @@ const Timer = ({ clock }) => {
   )
 }
 
-const Reset = ({ handleReset }) => {
+const Reset = ({ handleReset, resetButtonClicked }) => {
+
+  const conditionalClasses = resetButtonClicked
+    ? 'reset reset-clicked'
+    : 'reset'
+
   return (
     <ResetButton
-      className='reset'
+      className={conditionalClasses}
       onClick={handleReset}
     />
-
   )
 }
 
@@ -50,7 +72,8 @@ const ShowClock = ({
   handleReset,
   chilling,
   remainingTime,
-  pause
+  pause,
+  resetButtonClicked
   }) => {
 
   return (
@@ -61,11 +84,25 @@ const ShowClock = ({
 
       {remainingTime ? <AnimatedCircle /> : <Circle />}
 
-      {(!remainingTime || pause) && <PlayButton className='play' onClick={handlePlayPause} />}
+      <CSSTransition
+        in={!remainingTime || pause}
+        timeout={200}
+        classNames='play-pause'
+        unmountOnExit
+      >
+        <PlayButton className='play' onClick={handlePlayPause} />
+      </CSSTransition>
 
-      {remainingTime && !pause && <PauseButton className='pause' onClick={handlePlayPause} />}
+      <CSSTransition
+        in={remainingTime && !pause}
+        timeout={200}
+        classNames='play-pause'
+        unmountOnExit
+      >
+        <PauseButton className='pause' onClick={handlePlayPause} />
+      </CSSTransition>
 
-      <Reset handleReset={handleReset}/>
+      <Reset handleReset={handleReset} resetButtonClicked={resetButtonClicked}/>
 
     </>
   )

@@ -168,6 +168,24 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
+.play-pause-enter {
+  transform: scale(0);
+}
+
+.play-pause-enter-active {
+  transform: scale(1);
+  transition: all 200ms;
+}
+
+.play-pause-exit {
+  transform: scale(1);
+}
+
+.play-pause-exit-active {
+  transform: scale(0);
+  transition: all 200ms;
+}
+
 .pause {
   position: absolute;
   width: 92px;
@@ -186,6 +204,19 @@
   top: calc(50% - 92px/2 + 245px);
   fill: white;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+}
+
+.reset-clicked {
+  animation: reset-rotate 1s
+}
+
+@keyframes reset-rotate {
+  from {
+    transform: rotate(360deg)
+  }
+  to {
+    transform: rotate(0deg)
+  }
 }
 
 .circle {

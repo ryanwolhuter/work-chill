@@ -17,6 +17,7 @@ class Clock extends Component {
     pause: false,
     chilling: false,
     playButtonClicked: false,
+    resetButtonClicked: false
   }
 
   startTimer = () => {
@@ -224,7 +225,10 @@ class Clock extends Component {
       pause: false,
       chilling: false,
       playButtonClicked: false,
+      resetButtonClicked: true
     })
+
+    setTimeout(() => this.setState({ resetButtonClicked: false}), 1000)
   }
 
   // The play and pause is controlled by one button, so whether
@@ -255,7 +259,8 @@ class Clock extends Component {
       chilling,
       clock,
       remainingTime,
-      pause
+      pause,
+      resetButtonClicked
     } = this.state
 
     const clockString = `${('0' + clock.minutes).slice(-2)}:${('0' + clock.seconds).slice(-2)}`
@@ -275,6 +280,7 @@ class Clock extends Component {
           clock={clockString}
           remainingTime={remainingTime}
           pause={pause}
+          resetButtonClicked={resetButtonClicked}
         />
 
         <audio
