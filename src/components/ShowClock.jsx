@@ -1,4 +1,5 @@
 import React from 'react'
+import { CSSTransition } from 'react-transition-group'
 import { ReactComponent as PlayButton } from '../assets/play.svg'
 import { ReactComponent as PauseButton } from '../assets/pause.svg'
 import { ReactComponent as ResetButton } from '../assets/reset.svg'
@@ -60,9 +61,9 @@ const ShowClock = ({
 
       {remainingTime ? <AnimatedCircle /> : <Circle />}
 
-      {remainingTime && !pause
-        ? <PauseButton className='pause' onClick={handlePlayPause} />
-        : <PlayButton className='play' onClick={handlePlayPause} />}
+      {(!remainingTime || pause) && <PlayButton className='play' onClick={handlePlayPause} />}
+
+      {remainingTime && !pause && <PauseButton className='pause' onClick={handlePlayPause} />}
 
       <Reset handleReset={handleReset}/>
 
