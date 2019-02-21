@@ -22,7 +22,6 @@ const ChillTime = ({ chillTime }) => {
   )
 }
 
-
 const Labels = ({ chillTime, workTime, updateChillTime, updateWorkTime }) => {
 
   return (

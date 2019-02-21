@@ -264,3 +264,21 @@
     transform: rotate(1080deg)
   }
 }
+
+.length-button-clicked {
+  background-color: transparent;
+  animation: sk-scaleout 300ms infinite ease-in-out;
+}
+
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}

@@ -150,6 +150,8 @@ class Clock extends Component {
       clock
     } = this.state
 
+    this.triggerButtonAnimation(event)
+
     if (event.currentTarget.id === 'work-plus' && workTime < 60) {
 
       this.setState({
@@ -169,6 +171,12 @@ class Clock extends Component {
     }
   }
 
+  triggerButtonAnimation = event => {
+    const buttonClasses = document.getElementById(event.currentTarget.id).classList
+    buttonClasses.add('length-button-clicked')
+    setTimeout(() => buttonClasses.remove('length-button-clicked'), 300)
+  }
+
   updateChillTime = event => {
 
     const {
@@ -178,6 +186,8 @@ class Clock extends Component {
       chilling,
       clock
     } = this.state
+
+    this.triggerButtonAnimation(event)
 
     if (event.currentTarget.id === 'chill-plus' && chillTime < 60) {
       this.setState({
