@@ -149,7 +149,7 @@ class Clock extends Component {
       clock
     } = this.state
 
-    if (event.currentTarget.id === 'work-up-arrow' && workTime < 60) {
+    if (event.currentTarget.id === 'work-plus' && workTime < 60) {
 
       this.setState({
         workTime: workTime + 1,
@@ -158,7 +158,7 @@ class Clock extends Component {
       })
     }
 
-    else if (event.currentTarget.id === 'work-down-arrow' && workTime > 1) {
+    else if (event.currentTarget.id === 'work-minus' && workTime > 1) {
 
       this.setState({
         workTime: workTime - 1,
@@ -178,7 +178,7 @@ class Clock extends Component {
       clock
     } = this.state
 
-    if (event.currentTarget.id === 'chill-up-arrow' && chillTime < 60) {
+    if (event.currentTarget.id === 'chill-plus' && chillTime < 60) {
       this.setState({
         chillTime: chillTime + 1,
         chillOffset: remainingTime ? chillOffset + 1 : chillOffset,
@@ -188,7 +188,7 @@ class Clock extends Component {
       })
     }
 
-    else if (event.currentTarget.id === 'chill-down-arrow' && chillTime > 1) {
+    else if (event.currentTarget.id === 'chill-minus' && chillTime > 1) {
 
       this.setState({
         chillTime: chillTime - 1,

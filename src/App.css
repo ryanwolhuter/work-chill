@@ -114,7 +114,7 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 
-.work-down-arrow {
+.work-minus {
   position: absolute;
   left: 15.2%;
   right: 77.87%;
@@ -125,7 +125,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
-.work-up-arrow {
+.work-plus {
   position: absolute;
   left: 27.73%;
   right: 65.33%;
@@ -136,7 +136,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
-.chill-down-arrow {
+.chill-minus {
   position: absolute;
   left: 65.33%;
   right: 27.73%;
@@ -147,7 +147,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
 }
 
-.chill-up-arrow {
+.chill-plus {
   position: absolute;
   left: 77.87%;
   right: 15.2%;

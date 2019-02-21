@@ -1,6 +1,6 @@
 import React from 'react'
-import { ReactComponent as UpArrow } from '../assets/up-arrow.svg'
-import { ReactComponent as DownArrow } from '../assets/down-arrow.svg'
+import { ReactComponent as Plus } from '../assets/plus.svg'
+import { ReactComponent as Minus } from '../assets/minus.svg'
 
 // A stateless functional component to render the Labels.
 // The logic for updating the Labels' values
@@ -29,29 +29,29 @@ const Labels = ({ chillTime, workTime, updateChillTime, updateWorkTime }) => {
     <>
       <WorkTime workTime={workTime}/>
 
-      <UpArrow
-        className='work-up-arrow'
-        id='work-up-arrow'
+      <Plus
+        className='work-plus'
+        id='work-plus'
         onClick={updateWorkTime}
       />
 
-      <DownArrow
-        className='work-down-arrow'
-        id='work-down-arrow'
+      <Minus
+        className='work-minus'
+        id='work-minus'
         onClick={updateWorkTime}
       />
 
       <ChillTime chillTime={chillTime}/>
 
-      <UpArrow
-        className='chill-up-arrow'
-        id='chill-up-arrow'
+      <Plus
+        className='chill-plus'
+        id='chill-plus'
         onClick={updateChillTime}
       />
 
-      <DownArrow
-        className='chill-down-arrow'
-        id='chill-down-arrow'
+      <Minus
+        className='chill-minus'
+        id='chill-minus'
         onClick={updateChillTime}
       />
     </>
