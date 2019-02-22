@@ -25,35 +25,42 @@ const ChillTime = ({ chillTime }) => {
 const Labels = ({ chillTime, workTime, updateChillTime, updateWorkTime }) => {
 
   return (
-    <>
-      <WorkTime workTime={workTime}/>
+    <div className='length-controls'>
+      <div className='work-controls'>
 
-      <Plus
-        className='work-plus'
-        id='work-plus'
-        onClick={updateWorkTime}
-      />
+        <WorkTime workTime={workTime} />
 
-      <Minus
-        className='work-minus'
-        id='work-minus'
-        onClick={updateWorkTime}
-      />
+        <div className='length-control-buttons'>
+          <Minus
+            className='work-minus'
+            id='work-minus'
+            onClick={updateWorkTime}
+          />
+          <Plus
+            className='work-plus'
+            id='work-plus'
+            onClick={updateWorkTime}
+          />
+        </div>
+      </div>
 
-      <ChillTime chillTime={chillTime}/>
+      <div className='chill-controls'>
+        <ChillTime chillTime={chillTime} />
 
-      <Plus
-        className='chill-plus'
-        id='chill-plus'
-        onClick={updateChillTime}
-      />
-
-      <Minus
-        className='chill-minus'
-        id='chill-minus'
-        onClick={updateChillTime}
-      />
-    </>
+        <div className='length-control-buttons'>
+          <Minus
+            className='chill-minus'
+            id='chill-minus'
+            onClick={updateChillTime}
+          />
+          <Plus
+            className='chill-plus'
+            id='chill-plus'
+            onClick={updateChillTime}
+          />
+        </div>
+      </div>
+    </div>
   )
 }
 

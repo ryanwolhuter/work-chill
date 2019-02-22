@@ -1,55 +1,152 @@
-/* iPhone X */
+/* Sets the grid layout for the app */
 
-.App {
-  position: relative;
-  width: 375px;
-  height: 812px;
-
+ .App {
+  width: 100vw;
+  height: calc(100vh - 8rem);
   background: #BEBEBE;
+
+  display: grid;
+  grid-template-rows: 1fr 340px 1fr 1fr;
+  grid-template-areas:
+    "length-controls"
+     "timer"
+     "timer-controls"
+          ".";
 }
 
-.header-wrapper {
-  position: absolute;
-  width: 375px;
-  height: 127px;
-  left: 0px;
-  top: -5px;
+/* Header styles */
 
-  background: #FFFFFF;
+.header-wrapper {
+  grid-area: header-wrapper;
+  height: 8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: lightgrey;
   border-radius: 4px;
   box-shadow: 0 -2px -2px rgba(0, 0, 0, 0.05);
 }
 
 .header {
-  position: absolute;
-  width: 260px;
-  height: 56px;
-  left: calc(50% - 260px/2 - 0.5px);
-  top: calc(50% - 56px/2 - 325px);
 
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: 48px;
+  font-size: 3rem;
   letter-spacing: 0.01em;
 
   color: #737373;
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 
+/* Length control buttons styles */
+
+.length-controls {
+  grid-area: length-controls;
+  min-width: 340px;
+  display: flex;
+  justify-self: center;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.work-time {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.chill-time {
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.01em;
+  margin-bottom: 1rem;
+
+  color: #FFFFFF;
+
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+}
+
+.length-control-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+.work-minus {
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  margin-right: 1rem;
+}
+
+.work-plus {
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  margin-left: 1rem;
+}
+
+.chill-minus {
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  margin-right: 1rem;
+}
+
+.chill-plus {
+  fill: white;
+  transform: scale(1.5);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  margin-left: 1rem;
+
+}
+
+.length-button-clicked {
+  animation: scale-out 300ms infinite ease-in-out;
+}
+
+@keyframes scale-out {
+  0% {
+    transform: scale(1.5);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Timer styles */
+
 .indicator {
-  position: absolute;
-  width: 60px;
-  height: 26px;
-  left: 157px;
-  top: 325px;
+  margin-bottom: 7rem;
+
+  grid-area: timer;
+  justify-self: center;
+  align-self: center;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
-  font-size: 24px;
+  font-size: 1.5rem;
   letter-spacing: 0.01em;
 
   color: #FFFFFF;
@@ -58,17 +155,18 @@
 }
 
 .timer {
-  position: absolute;
   width: 163px;
   height: 58px;
-  left: 106px;
-  top: 377px;
+
+  grid-area: timer;
+  justify-self: center;
+  align-self: center;
 
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
-  font-size: 64px;
+  font-size: 4rem;
   letter-spacing: 0.01em;
 
   color: #FFFFFF;
@@ -76,96 +174,73 @@
   text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
 }
 
-.work-time {
-  position: absolute;
-  width: 117px;
-  height: 25px;
-  left: calc(50% - 117px/2 - 93px);
-  top: calc(50% - 25px/2 - 251.5px);
+/* Timer spinning circle styles */
 
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 22px;
-  letter-spacing: 0.01em;
-
-  color: #FFFFFF;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+.circle {
+  width: 340px;
+  height: 340px;
+  stroke: white;
+  stroke-width: 8;
+  grid-area: timer;
+  justify-self: center;
+  align-self: center;
 }
 
-.chill-time {
-  position: absolute;
-  width: 97px;
-  height: 25px;
-  left: calc(50% - 97px/2 + 94px);
-  top: calc(50% - 25px/2 - 251.5px);
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  line-height: normal;
-  font-size: 22px;
-  letter-spacing: 0.01em;
-
-  color: #FFFFFF;
-
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+.spinner {
+  width: 340px;
+  height: 340px;
+  grid-area: timer;
+  justify-self: center;
+  align-self: center;
 }
 
-.work-minus {
-  position: absolute;
-  left: 15.2%;
-  right: 77.87%;
-  top: 21.92%;
-  bottom: 75%;
-  fill: white;
-  transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+.animated-circle {
+  stroke: white;
+  stroke-width: 8;
+  stroke-dasharray: 1068;
+  stroke-linecap: round;
+  transform-origin: 170px 170px 0;
+  animation: spinner 9s linear infinite;
+  animation-direction: normal;
+  grid-area: timer;
+  justify-self: center;
+  align-self: center;
 }
 
-.work-plus {
-  position: absolute;
-  left: 27.73%;
-  right: 65.33%;
-  top: 21.92%;
-  bottom: 71.92%;
-  fill: white;
-  transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+@keyframes spinner {
+  0% {
+    stroke-dashoffset: 34;
+    transform: rotate(0deg);
+  }
+  50% {
+    stroke-dashoffset: 1068;
+    transform: rotate(720deg);
+  }
+  100% {
+    stroke-dashoffset: 34;
+    transform: rotate(1080deg)
+  }
 }
 
-.chill-minus {
-  position: absolute;
-  left: 65.33%;
-  right: 27.73%;
-  top: 21.92%;
-  bottom: 75%;
-  fill: white;
-  transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+/* Timer control buttons styles */
+
+.timer-controls {
+  grid-area: timer-controls;
+  min-width: 375px;
+  justify-self: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "play-pause reset"
 }
 
-.chill-plus {
-  position: absolute;
-  left: 77.87%;
-  right: 15.2%;
-  top: 21.92%;
-  bottom: 71.92%;
-  fill: white;
-  transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
-}
-
-.play {
-  position: absolute;
+.play-pause {
+  grid-area: play-pause;
   width: 92px;
   height: 92px;
-  left: calc(50% - 92px/2 - 93.5px);
-  top: calc(50% - 92px/2 + 245px);
   fill: white;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  justify-self: center;
+  align-self: center;
 }
 
 .play-pause-enter {
@@ -186,24 +261,14 @@
   transition: all 200ms;
 }
 
-.pause {
-  position: absolute;
-  width: 92px;
-  height: 92px;
-  left: calc(50% - 92px/2 - 93.5px);
-  top: calc(50% - 92px/2 + 245px);
-  fill: white;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
-}
-
 .reset {
-  position: absolute;
+  grid-area: reset;
   width: 92px;
   height: 92px;
-  left: calc(50% - 92px/2 + 93.5px);
-  top: calc(50% - 92px/2 + 245px);
   fill: white;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  justify-self: center;
+  align-self: center;
 }
 
 .reset-clicked {
@@ -216,69 +281,5 @@
   }
   to {
     transform: rotate(0deg)
-  }
-}
-
-.circle {
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  left: 21px;
-  top: 240px;
-  stroke: white;
-  stroke-width: 8;
-}
-
-.spinner {
-  position: absolute;
-  width: 340px;
-  height: 340px;
-  left: 21px;
-  top: 240px;
-}
-
-.animated-circle {
-  position: absolute;
-  left: 21px;
-  top: 240px;
-  stroke: white;
-  stroke-width: 8;
-  stroke-dasharray: 1068;
-  stroke-linecap: round;
-  transform-origin: 170px 170px 0;
-  animation: spinner 9s linear infinite;
-  animation-direction: normal;
-}
-
-@keyframes spinner {
-  0% {
-    stroke-dashoffset: 34;
-    transform: rotate(0deg);
-  }
-  50% {
-    stroke-dashoffset: 1068;
-    transform: rotate(720deg);
-  }
-  100% {
-    stroke-dashoffset: 34;
-    transform: rotate(1080deg)
-  }
-}
-
-.length-button-clicked {
-  background-color: transparent;
-  animation: sk-scaleout 300ms infinite ease-in-out;
-}
-
-@keyframes sk-scaleout {
-  0% {
-    transform: scale(1.5);
-  }
-  50% {
-    transform: scale(1.2);
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 1;
   }
 }

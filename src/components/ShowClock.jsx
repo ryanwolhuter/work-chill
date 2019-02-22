@@ -84,13 +84,18 @@ const ShowClock = ({
 
       {remainingTime ? <AnimatedCircle /> : <Circle />}
 
+    <div className='timer-controls'>
+
       <CSSTransition
         in={!remainingTime || pause}
         timeout={200}
         classNames='play-pause'
         unmountOnExit
       >
-        <PlayButton className='play' onClick={handlePlayPause} />
+        <PlayButton
+          className='play-pause'
+          onClick={handlePlayPause}
+        />
       </CSSTransition>
 
       <CSSTransition
@@ -99,12 +104,19 @@ const ShowClock = ({
         classNames='play-pause'
         unmountOnExit
       >
-        <PauseButton className='pause' onClick={handlePlayPause} />
+        <PauseButton
+          className='play-pause'
+          onClick={handlePlayPause}
+        />
       </CSSTransition>
 
-      <Reset handleReset={handleReset} resetButtonClicked={resetButtonClicked}/>
+        <Reset
+          handleReset={handleReset}
+          resetButtonClicked={resetButtonClicked}
+        />
 
-    </>
+      </div>
+      </>
   )
 }
 
