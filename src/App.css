@@ -1,15 +1,26 @@
+/* Global CSS variables */
+
+:root {
+  --header-height: 6rem;
+  --circle-diameter: 340px;
+  --background: #368c72;
+  --header-text: #466551;
+  --header-background: #e7eed2;
+  --content: #e7eed2;
+}
+
 /* Sets the grid layout for the app */
 
  .App {
   width: 100vw;
-  height: calc(100vh - 8rem);
-  background: #BEBEBE;
+  height: calc(100vh - var(--header-height));
+  background: var(--background);
 
   display: grid;
-  grid-template-rows: 1fr 340px 1fr 1fr;
+  grid-template-rows: 1fr var(--circle-diameter) 1fr 1fr;
   grid-template-areas:
     "length-controls"
-     "timer"
+         "timer"
      "timer-controls"
           ".";
 }
@@ -18,14 +29,11 @@
 
 .header-wrapper {
   grid-area: header-wrapper;
-  height: 8rem;
+  height: var(--header-height);
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background: lightgrey;
-  border-radius: 4px;
-  box-shadow: 0 -2px -2px rgba(0, 0, 0, 0.05);
+  background: var(--header-background);
 }
 
 .header {
@@ -37,15 +45,15 @@
   font-size: 3rem;
   letter-spacing: 0.01em;
 
-  color: #737373;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  color: var(--header-text);
+  text-shadow: 0px 4px 4px rgba(70,101,81, 0.1);
 }
 
 /* Length control buttons styles */
 
 .length-controls {
   grid-area: length-controls;
-  min-width: 340px;
+  min-width: var(--circle-diameter);
   display: flex;
   justify-self: center;
   justify-content: space-between;
@@ -54,7 +62,6 @@
 
 .work-time {
 
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -62,14 +69,13 @@
   letter-spacing: 0.01em;
   margin-bottom: 1rem;
 
-  color: #FFFFFF;
+  color: var(--content);
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  text-shadow: 0px 4px 4px rgba(70,101,81, 0.1);
 }
 
 .chill-time {
 
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -77,9 +83,9 @@
   letter-spacing: 0.01em;
   margin-bottom: 1rem;
 
-  color: #FFFFFF;
+  color: var(--content);
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  text-shadow: 0px 4px 4px rgba(70,101,81, 0.1);
 }
 
 .length-control-buttons {
@@ -88,30 +94,30 @@
 }
 
 .work-minus {
-  fill: white;
+  fill: var(--content);
   transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
   margin-right: 1rem;
 }
 
 .work-plus {
-  fill: white;
+  fill: var(--content);
   transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
   margin-left: 1rem;
 }
 
 .chill-minus {
-  fill: white;
+  fill: var(--content);
   transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
   margin-right: 1rem;
 }
 
 .chill-plus {
-  fill: white;
+  fill: var(--content);
   transform: scale(1.5);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
   margin-left: 1rem;
 
 }
@@ -142,16 +148,15 @@
   justify-self: center;
   align-self: center;
 
-  font-family: Roboto;
   font-style: normal;
   font-weight: bold;
   line-height: normal;
   font-size: 1.5rem;
   letter-spacing: 0.01em;
 
-  color: #FFFFFF;
+  color: var(--content);
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  text-shadow: 0px 4px 4px rgba(70,101,81, 0.1);
 }
 
 .timer {
@@ -162,24 +167,23 @@
   justify-self: center;
   align-self: center;
 
-  font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   line-height: normal;
   font-size: 4rem;
   letter-spacing: 0.01em;
 
-  color: #FFFFFF;
+  color: var(--content);
 
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.05);
+  text-shadow: 0px 4px 4px rgba(70,101,81, 0.1);
 }
 
 /* Timer spinning circle styles */
 
 .circle {
-  width: 340px;
-  height: 340px;
-  stroke: white;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  stroke: var(--content);
   stroke-width: 8;
   grid-area: timer;
   justify-self: center;
@@ -187,20 +191,23 @@
 }
 
 .spinner {
-  width: 340px;
-  height: 340px;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
   grid-area: timer;
   justify-self: center;
   align-self: center;
 }
 
 .animated-circle {
-  stroke: white;
+  stroke: var(--content);
   stroke-width: 8;
   stroke-dasharray: 1068;
   stroke-linecap: round;
-  transform-origin: 170px 170px 0;
-  animation: spinner 9s linear infinite;
+  transform-origin:
+    calc(var(--circle-diameter) / 2)
+    calc(var(--circle-diameter) / 2) 0;
+  animation: spinner 9s linear infinite,
+    color 9s ease-in-out infinite;
   animation-direction: normal;
   grid-area: timer;
   justify-self: center;
@@ -222,11 +229,75 @@
   }
 }
 
+@keyframes color {
+  100%,
+  0% {
+    stroke: #e7eed2;
+  }
+  5% {
+    stroke: #DCEACD;
+  }
+  10% {
+    stroke: #D2E7C8;
+  }
+  15% {
+    stroke: #C7E3C3;
+  }
+  20% {
+    stroke: #BDE0BE;
+  }
+  25% {
+    stroke: #B2DCB9;
+  }
+  30% {
+    stroke: #A8D9B4;
+  }
+  35% {
+    stroke: #9DD5AF;
+  }
+  40% {
+    stroke: #93D2AA;
+  }
+  45% {
+    stroke: #88CEA5;
+  }
+  50% {
+    stroke: #7ECBA1;
+  }
+  55% {
+  stroke: #88CEA5;
+  }
+  60% {
+  stroke: #93D2AA;
+  }
+  65% {
+    stroke: #9DD5AF;
+  }
+  70% {
+    stroke: #A8D9B4;
+  }
+  75% {
+    stroke: #B2DCB9;
+  }
+  80% {
+    stroke: #BDE0BE;
+  }
+  85% {
+    stroke: #C7E3C3;
+  }
+  90% {
+    stroke: #D2E7C8;
+  }
+  95% {
+    stroke: #DCEACD;
+  }
+}
+
 /* Timer control buttons styles */
 
 .timer-controls {
   grid-area: timer-controls;
-  min-width: 375px;
+  min-width: var(--circle-diameter);
   justify-self: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -237,9 +308,9 @@
   grid-area: play-pause;
   width: 92px;
   height: 92px;
-  fill: white;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
-  justify-self: center;
+  fill: var(--content);
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
+  justify-self: start;
   align-self: center;
 }
 
@@ -265,9 +336,9 @@
   grid-area: reset;
   width: 92px;
   height: 92px;
-  fill: white;
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.05));
-  justify-self: center;
+  fill: var(--content);
+  filter: drop-shadow(0px 4px 4px rgba(70,101,81, 0.1));
+  justify-self: end;
   align-self: center;
 }
 
