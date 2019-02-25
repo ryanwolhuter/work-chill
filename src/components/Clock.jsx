@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Labels from './Labels'
 import ShowClock from './ShowClock'
 
-// Container component that holds the Clock logic.
+/* Container component that holds the Clock logic */
 
 class Clock extends Component {
 
@@ -20,10 +20,13 @@ class Clock extends Component {
     resetButtonClicked: false
   }
 
-  startTimer = () => {
+  triggerButtonAnimation = event => {
+    const buttonClasses = document.getElementById(event.currentTarget.id).classList
+    buttonClasses.add('length-button-clicked')
+    setTimeout(() => buttonClasses.remove('length-button-clicked'), 300)
+  }
 
-    // NOTE: interval and pause must be checked on each iteration of
-    // the interval, so they can't be destructured here.
+  startTimer = () => {
 
     const {
       remainingTime,
@@ -171,12 +174,6 @@ class Clock extends Component {
     }
   }
 
-  triggerButtonAnimation = event => {
-    const buttonClasses = document.getElementById(event.currentTarget.id).classList
-    buttonClasses.add('length-button-clicked')
-    setTimeout(() => buttonClasses.remove('length-button-clicked'), 300)
-  }
-
   updateChillTime = event => {
 
     const {
@@ -238,6 +235,8 @@ class Clock extends Component {
       resetButtonClicked: true
     })
 
+    // Reset resetButtonClicked after the duration of the animation
+    
     setTimeout(() => this.setState({ resetButtonClicked: false}), 1000)
   }
 

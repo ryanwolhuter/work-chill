@@ -4,6 +4,8 @@ import { ReactComponent as PlayButton } from '../assets/play.svg'
 import { ReactComponent as PauseButton } from '../assets/pause.svg'
 import { ReactComponent as ResetButton } from '../assets/reset.svg'
 
+/* Static and animated circle SVGs */
+
 const Circle = () => {
   return (
     <svg
@@ -36,6 +38,8 @@ const AnimatedCircle = () => {
   )
 }
 
+/* Indicates whether we're working or chilling */
+
 const Indicator = ({ chilling }) => {
   return (
     <div className='indicator'>
@@ -44,11 +48,15 @@ const Indicator = ({ chilling }) => {
   )
 }
 
+/* Displays the countdown timer */
+
 const Timer = ({ clock }) => {
   return (
     <div className='timer'>{clock}</div>
   )
 }
+
+/* The reset button */
 
 const Reset = ({ handleReset, resetButtonClicked }) => {
 
@@ -64,7 +72,7 @@ const Reset = ({ handleReset, resetButtonClicked }) => {
   )
 }
 
-/* This is the presentational component that renders the Clock to the DOM. */
+/* Presentational component that renders the Clock to the DOM. */
 
 const ShowClock = ({
   clock,

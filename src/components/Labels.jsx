@@ -2,9 +2,11 @@ import React from 'react'
 import { ReactComponent as Plus } from '../assets/plus.svg'
 import { ReactComponent as Minus } from '../assets/minus.svg'
 
-// A stateless functional component to render the Labels.
-// The logic for updating the Labels' values
-// is kept in the Clock component's state.
+/*
+* A stateless functional component to render the Labels.
+* The logic for updating the Labels' values
+* is kept in the Clock component's state.
+*/
 
 const WorkTime = ({ workTime }) => {
   return (
