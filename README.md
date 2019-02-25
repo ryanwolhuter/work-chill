@@ -2,6 +2,8 @@
 
 If you're looking for a simple, laid-back looking pomodoro timer, look no further.
 
+[Live site](https://work-chill.netlify.com/)
+
 ## Features
 
 * Built with React
